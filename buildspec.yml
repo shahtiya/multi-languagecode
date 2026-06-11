@@ -7,6 +7,7 @@ phases:
       java: corretto17
     commands:
       - echo "Installing dependencies"
+      - pip install paramiko
 
   build:
     commands:
@@ -18,6 +19,11 @@ phases:
 
       - echo "Running Java Program"
       - java Main
+
+  post_build:
+    commands:
+      - echo "Deploying to EC2"
+      - python deploy_to_ec2.py
 
 artifacts:
   files:
