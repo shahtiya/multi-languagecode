@@ -17,4 +17,4 @@ jobs:
 
       - name: Run Python
 
-        run: main.py
+        run: python main.py
